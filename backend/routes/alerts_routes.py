@@ -1,5 +1,5 @@
 """
-routes/alerts_routes.py — Fire Sentinel Prototype 2
+routes/alerts_routes.py — Ignis
 
 Alert SENDING itself is triggered internally by services/risk_score_service.py
 on state changes — this blueprint just exposes history and a manual test-send
@@ -33,10 +33,10 @@ def test_alert():
     channel = data.get("channel")
 
     if channel == "telegram":
-        success, error = telegram_service.send_text("Fire Sentinel test alert — Telegram is wired up correctly.")
+        success, error = telegram_service.send_text("Ignis test alert — Telegram is wired up correctly.")
     elif channel == "email":
         success, error = email_service.send_email(
-            "Fire Sentinel Test Alert",
+            "Ignis Test Alert",
             "This is a test message confirming your email alert configuration works.",
         )
     else:

@@ -1,5 +1,5 @@
 """
-routes/camera_routes.py — Fire Sentinel Prototype 2
+routes/camera_routes.py — Ignis
 
 Three jobs:
   1. POST /api/camera/snapshot        — receives the multipart upload from

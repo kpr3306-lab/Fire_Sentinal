@@ -1,5 +1,5 @@
 /*
- * sensors.cpp — Fire Sentinel Prototype 2 (v2)
+ * sensors.cpp — Ignis (v2)
  *
  * Libraries: Adafruit BME280 (+Unified Sensor), Adafruit ADS1X15.
  * MQ ppm values are still PLACEHOLDER linear maps (flagged in the payload as

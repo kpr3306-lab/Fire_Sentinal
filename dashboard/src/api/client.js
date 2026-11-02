@@ -1,5 +1,5 @@
 /**
- * api/client.js — Fire Sentinel Prototype 2 dashboard
+ * api/client.js — Ignis dashboard
  *
  * Thin wrappers around fetch(). Vite's dev proxy (vite.config.js) forwards
  * /api/* to the Flask backend, so these paths work unchanged in dev and

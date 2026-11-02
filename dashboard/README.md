@@ -1,4 +1,4 @@
-# Fire Sentinel Prototype 2 — Dashboard
+# Ignis — Dashboard
 
 React + Vite + Tailwind. Talks to the Flask backend via `/api/*`, proxied
 by Vite's dev server so there's no CORS setup needed locally.

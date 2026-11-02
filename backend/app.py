@@ -1,5 +1,5 @@
 """
-app.py — Fire Sentinel Prototype 2 backend entry point
+app.py — Ignis backend entry point
 """
 
 import os
@@ -42,7 +42,7 @@ def create_app():
 
     @app.route("/api/health", methods=["GET"])
     def health():
-        return jsonify({"status": "ok", "service": "fire-sentinel-backend"}), 200
+        return jsonify({"status": "ok", "service": "ignis-backend"}), 200
 
     return app
 

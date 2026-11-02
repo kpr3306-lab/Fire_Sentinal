@@ -1,5 +1,5 @@
--- Fire Sentinel Prototype 2 — SQLite schema
--- Run automatically by db.init_db() on first launch if fire_sentinel.db doesn't exist.
+-- Ignis — SQLite schema
+-- Run automatically by db.init_db() on first launch if ignis.db doesn't exist.
 
 PRAGMA foreign_keys = ON;
 

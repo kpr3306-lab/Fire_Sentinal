@@ -5,7 +5,7 @@ The firmware prints one line per second:  CSV,<ms>,<temp>,...   (see sensor_comm
 This script keeps only those lines, adds the label you give it, and writes
     ml/sensor/dataset/raw/<LABEL>__<scenario>__<YYYYmmdd_HHMMSS>.csv
 
-Run from the fire_sentinel_ml_kit folder (PowerShell):
+Run from the ignis_ml_kit folder (PowerShell):
     pip install pyserial
     python tools/collect_serial.py --list-ports
     python tools/collect_serial.py --port COM5 --label NORMAL --scenario bedroom_evening --minutes 10
@@ -79,7 +79,7 @@ def main():
     t0 = time.time()
     try:
         with open(path, "w", newline="", encoding="utf-8") as f:
-            f.write("# fire-sentinel-sensor-session v1\n")
+            f.write("# ignis-sensor-session v1\n")
             f.write(f"# label={args.label}\n# scenario={args.scenario}\n# note={args.note}\n")
             f.write(f"# recorded={datetime.now().isoformat(timespec='seconds')}\n")
             w = csv.writer(f)

@@ -1,4 +1,4 @@
-# Flashing Fire Sentinel P2 (firmware v2.3) with the Arduino IDE
+# Flashing Ignis (firmware v2.3) with the Arduino IDE
 
 Board: Freenove ESP32-S3-WROOM CAM (N16R8: 16 MB flash, 8 MB OPI PSRAM, OV3660).
 Verified to compile with **esp32 core 3.3.12** (46 % of the Huge APP partition).
@@ -18,7 +18,7 @@ Verified to compile with **esp32 core 3.3.12** (46 % of the Huge APP partition).
 3. **WiFi:** `esp32s3_cam_main/secrets.h` holds `WIFI_SSID` / `WIFI_PASSWORD` (template: `secrets.h.example`).
 4. **Backend address:** `config.h` → `BACKEND_HOST "10.111.193.119"`. This must be the LAN IP of the PC running `python run.py`, on the same WiFi.
 
-## Final pin map (as wired; checked against Fire_Sentinel_Wiring_Diagram.pdf)
+## Final pin map (as wired; checked against Ignis_Wiring_Diagram.pdf)
 | GPIO | Part | config.h |
 |---|---|---|
 | 1 | IR flame module DO (active LOW) | `FLAME_DIGITAL_GPIO 1`, `FLAME_ACTIVE_LOW true` |

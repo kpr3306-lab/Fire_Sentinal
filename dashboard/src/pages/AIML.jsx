@@ -88,7 +88,7 @@ export default function AIML() {
     <div className="p-6 space-y-6 max-w-[1400px] mx-auto">
       <div>
         <h1 className="text-2xl font-semibold">AI / ML</h1>
-        <p className="text-textMuted text-sm">Models running in Fire Sentinel and their test-set results</p>
+        <p className="text-textMuted text-sm">Models running in Ignis and their test-set results</p>
       </div>
 
       {error && <div className="rounded-lg border border-warn/40 bg-warn/10 text-warn text-sm px-4 py-2">{error}</div>}

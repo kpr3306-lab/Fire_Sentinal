@@ -1,8 +1,8 @@
 """
-services/ml_inference_service.py — Fire Sentinel Prototype 2 (REAL implementation; replaces the stub).
+services/ml_inference_service.py — Ignis (REAL implementation; replaces the stub).
 
 Drop-in: same classify_snapshot() signature and ClassificationResult as the stub, so nothing in routes/
-changes. Looks for the model at fire_sentinel_ml_kit/ml/cnn/artifacts/fire_cnn_int8.tflite (override: FIRE_MODEL_PATH).
+changes. Looks for the model at ignis_ml_kit/ml/cnn/artifacts/fire_cnn_int8.tflite (override: FIRE_MODEL_PATH).
 
 Edge cases handled: model file missing -> PENDING_MODEL (never crashes the upload path);
 unreadable/corrupt image -> PENDING_MODEL; concurrent Flask threads -> interpreter guarded by a lock;
@@ -28,7 +28,7 @@ except Exception:
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_PATH = os.getenv("FIRE_MODEL_PATH",
-                       os.path.join(BASE, "..", "fire_sentinel_ml_kit", "ml", "cnn", "artifacts", "fire_cnn_int8.tflite"))
+                       os.path.join(BASE, "..", "ignis_ml_kit", "ml", "cnn", "artifacts", "fire_cnn_int8.tflite"))
 LABELS = ["NO_FLAME", "CONTROLLED_FLAME", "HAZARDOUS_FIRE"]    # same order as training CLASS_NAMES
 
 _lock = threading.Lock()

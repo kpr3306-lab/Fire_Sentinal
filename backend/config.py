@@ -1,5 +1,5 @@
 """
-config.py — Fire Sentinel Prototype 2 backend
+config.py — Ignis backend
 
 Secrets (Telegram bot token, email credentials) are read from environment
 variables, loaded from a local .env file via python-dotenv. Copy .env.example
@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # ---------------------------------------------------------------------------
 # Database
 # ---------------------------------------------------------------------------
-DATABASE_PATH = os.path.join(BASE_DIR, "database", "fire_sentinel.db")
+DATABASE_PATH = os.path.join(BASE_DIR, "database", "ignis.db")
 SCHEMA_PATH = os.path.join(BASE_DIR, "database", "schema.sql")
 
 # ---------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 """
-routes/model_routes.py — Fire Sentinel Prototype 2
+routes/model_routes.py — Ignis
 
 Exposes whatever's in ml/cnn/model_manifest.json (once the ML phase produces
 one) so the dashboard's AI/ML page and the device's hot-swap check can both
@@ -14,7 +14,7 @@ from flask import Blueprint, jsonify
 model_bp = Blueprint("model_routes", __name__)
 
 MANIFEST_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "..",
-                             "fire_sentinel_ml_kit", "ml", "cnn", "model_manifest.json")
+                             "ignis_ml_kit", "ml", "cnn", "model_manifest.json")
 
 
 @model_bp.route("/api/model-info", methods=["GET"])

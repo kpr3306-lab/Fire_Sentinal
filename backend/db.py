@@ -1,5 +1,5 @@
 """
-db.py — Fire Sentinel Prototype 2 backend
+db.py — Ignis backend
 
 Thin SQLite connection helper. Deliberately not an ORM: the schema is small
 and stable enough that raw SQL in each route/service stays readable, and it

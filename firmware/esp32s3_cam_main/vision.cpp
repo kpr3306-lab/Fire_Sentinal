@@ -1,5 +1,5 @@
 /*
- * vision.cpp — Fire Sentinel Prototype 2
+ * vision.cpp — Ignis
  *
  * Preprocessing matches training (ml/cnn/cnn_common.py, ultralytics export):
  *   JPEG (SVGA) -> esp_jpeg decode at 1/4 scale (RGB888) ->

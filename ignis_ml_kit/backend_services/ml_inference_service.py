@@ -1,5 +1,5 @@
 """
-services/ml_inference_service.py — Fire Sentinel Prototype 2 (REAL implementation; replaces the stub).
+services/ml_inference_service.py — Ignis (REAL implementation; replaces the stub).
 
 Drop-in: same classify_snapshot() signature and ClassificationResult as the stub, so nothing in routes/
 changes. Looks for the model at ml/cnn/artifacts/fire_cnn_int8.tflite (override: FIRE_MODEL_PATH).

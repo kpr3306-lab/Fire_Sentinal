@@ -1,5 +1,5 @@
 """
-routes/device_routes.py — Fire Sentinel Prototype 2
+routes/device_routes.py — Ignis
 
 This is what eliminates the "reflash to change room/IP" problem:
   - POST /api/device/register  — device self-announces on boot + every 60s

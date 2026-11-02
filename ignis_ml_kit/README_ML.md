@@ -1,6 +1,6 @@
-# Fire Sentinel P2 — CNN training kit
+# Ignis — CNN training kit
 
-Drop the contents into your repo root (`fire-sentinal-p2/`). Paths match `Fire_Sentinel_P2_Project_Structure.md`.
+Run every command below from the `ignis_ml_kit/` folder.
 
 ```
 ml/cnn/cnn_common.py          shared helpers (class order is FIXED: no_fire, controlled_flame, hazardous_fire)

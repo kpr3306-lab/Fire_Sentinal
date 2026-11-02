@@ -43,7 +43,7 @@ export default function Reports() {
       description: `Every stored reading for the selected device (latest ${MAX_ROWS.toLocaleString()}): temperature, humidity, gas, UV, flame, risk score, raw ADC counts.`,
       needsDevice: true,
       fetch: () => getReadingHistory(deviceId, MAX_ROWS),
-      file: () => `fire_sentinel_readings_${deviceId}_${stamp()}.csv`,
+      file: () => `ignis_readings_${deviceId}_${stamp()}.csv`,
     },
     {
       id: "events",
@@ -51,7 +51,7 @@ export default function Reports() {
       description: "State changes (NORMAL → WARNING → ALERT…), snapshot captures and alerts, newest first.",
       needsDevice: true,
       fetch: () => getEvents({ device_id: deviceId }, MAX_ROWS),
-      file: () => `fire_sentinel_events_${deviceId}_${stamp()}.csv`,
+      file: () => `ignis_events_${deviceId}_${stamp()}.csv`,
     },
     {
       id: "alerts",
@@ -59,7 +59,7 @@ export default function Reports() {
       description: "Every Telegram and email alert with severity and whether it was delivered. All devices.",
       needsDevice: false,
       fetch: () => getAlertHistory(MAX_ROWS),
-      file: () => `fire_sentinel_alerts_${stamp()}.csv`,
+      file: () => `ignis_alerts_${stamp()}.csv`,
     },
   ];
 

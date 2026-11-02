@@ -1,5 +1,5 @@
 /*
- * camera.cpp — Fire Sentinel Prototype 2 (v2)
+ * camera.cpp — Ignis (v2)
  * Freenove ESP32-S3-WROOM CAM. Works for OV2640 and OV3660 (JPEG).
  *
  * The camera XCLK uses LEDC timer 3 / channel 7 so the buzzer (channel 0 / timer 0)

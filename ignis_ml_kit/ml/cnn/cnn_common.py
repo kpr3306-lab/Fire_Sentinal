@@ -1,5 +1,5 @@
 """
-ml/cnn/cnn_common.py — shared helpers for the Fire Sentinel 3-class CNN pipeline.
+ml/cnn/cnn_common.py — shared helpers for the Ignis 3-class CNN pipeline.
 
 Class order is FIXED and is also written into model_manifest.json. The ESP32
 firmware and backend index the model output by this order, so never reorder.

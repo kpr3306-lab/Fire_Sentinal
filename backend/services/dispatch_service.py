@@ -1,5 +1,5 @@
 """
-Fire-department dispatch — SIMULATION (Fire Sentinel P2).
+Fire-department dispatch — SIMULATION (Ignis).
 
 What it does
 ------------
