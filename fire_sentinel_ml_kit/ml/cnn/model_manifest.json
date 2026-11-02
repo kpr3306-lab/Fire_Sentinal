@@ -1,0 +1,67 @@
+{
+  "status": "trained",
+  "version": "1.0.0",
+  "file": "fire_cnn_int8.tflite",
+  "sha256": "3f9c97f89d38e1cab12dafa6a6ded20029ce3db2f30481014873c0778466ea9b",
+  "trained_at": "2026-10-18T06:40:34.716293+00:00",
+  "backbone": "MobileNetV2 alpha=0.35",
+  "pretrained": true,
+  "input": {
+    "shape": [
+      1,
+      96,
+      96,
+      3
+    ],
+    "dtype": "int8",
+    "scale": 1.0000087022781372,
+    "zero_point": -128,
+    "resize": "area",
+    "note": "feed raw RGB 0-255 pixels quantised with scale/zero_point; rescaling is inside the model"
+  },
+  "output": {
+    "classes": [
+      "no_fire",
+      "controlled_flame",
+      "hazardous_fire"
+    ],
+    "labels": [
+      "NO_FLAME",
+      "CONTROLLED_FLAME",
+      "HAZARDOUS_FIRE"
+    ],
+    "scale": 0.00390625,
+    "zero_point": -128
+  },
+  "size_bytes": 626904,
+  "fp32_size_bytes": 1610652,
+  "train_counts": {
+    "no_fire": 5897,
+    "controlled_flame": 5534,
+    "hazardous_fire": 2312
+  },
+  "test": {
+    "n": 2944,
+    "accuracy": 0.9697690217391305,
+    "macro_f1": 0.9611143761496277,
+    "hazardous_recall": 0.9191919191919192,
+    "false_hazard_alarm_rate": 0.013883217639853002,
+    "confusion_matrix": [
+      [
+        1226,
+        5,
+        32
+      ],
+      [
+        10,
+        1174,
+        2
+      ],
+      [
+        40,
+        0,
+        455
+      ]
+    ]
+  }
+}

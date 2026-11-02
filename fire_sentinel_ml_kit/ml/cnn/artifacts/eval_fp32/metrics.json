@@ -1,0 +1,144 @@
+{
+  "accuracy": 0.9775815217391305,
+  "per_class": {
+    "no_fire": {
+      "precision": 0.9658385093167702,
+      "recall": 0.9849564528899446,
+      "f1": 0.9753038024304195,
+      "support": 1263
+    },
+    "controlled_flame": {
+      "precision": 0.9974662162162162,
+      "recall": 0.9957841483979764,
+      "f1": 0.9966244725738397,
+      "support": 1186
+    },
+    "hazardous_fire": {
+      "precision": 0.9597457627118644,
+      "recall": 0.9151515151515152,
+      "f1": 0.9369183040330921,
+      "support": 495
+    }
+  },
+  "macro_f1": 0.9696155263457836,
+  "hazardous_recall": 0.9151515151515152,
+  "hazardous_miss_rate": 0.08484848484848485,
+  "hazardous_to_no_fire_rate": 0.08282828282828283,
+  "false_hazard_alarm_rate": 0.007758268681094325,
+  "confusion_matrix": [
+    [
+      1244,
+      2,
+      17
+    ],
+    [
+      3,
+      1181,
+      2
+    ],
+    [
+      41,
+      1,
+      453
+    ]
+  ],
+  "hazard_threshold_sweep": [
+    {
+      "threshold": 0.05,
+      "hazardous_recall": 0.9696969696969697,
+      "false_hazard_alarm_rate": 0.03307472437729685
+    },
+    {
+      "threshold": 0.1,
+      "hazardous_recall": 0.9616161616161616,
+      "false_hazard_alarm_rate": 0.02000816659861168
+    },
+    {
+      "threshold": 0.15,
+      "hazardous_recall": 0.9595959595959596,
+      "false_hazard_alarm_rate": 0.013066557778685178
+    },
+    {
+      "threshold": 0.2,
+      "hazardous_recall": 0.9494949494949495,
+      "false_hazard_alarm_rate": 0.011433238056349531
+    },
+    {
+      "threshold": 0.25,
+      "hazardous_recall": 0.9474747474747475,
+      "false_hazard_alarm_rate": 0.010616578195181707
+    },
+    {
+      "threshold": 0.3,
+      "hazardous_recall": 0.9434343434343434,
+      "false_hazard_alarm_rate": 0.009799918334013884
+    },
+    {
+      "threshold": 0.35,
+      "hazardous_recall": 0.9393939393939394,
+      "false_hazard_alarm_rate": 0.009799918334013884
+    },
+    {
+      "threshold": 0.4,
+      "hazardous_recall": 0.9333333333333333,
+      "false_hazard_alarm_rate": 0.009391588403429971
+    },
+    {
+      "threshold": 0.45,
+      "hazardous_recall": 0.9232323232323232,
+      "false_hazard_alarm_rate": 0.008166598611678236
+    },
+    {
+      "threshold": 0.5,
+      "hazardous_recall": 0.9151515151515152,
+      "false_hazard_alarm_rate": 0.007349938750510413
+    },
+    {
+      "threshold": 0.55,
+      "hazardous_recall": 0.907070707070707,
+      "false_hazard_alarm_rate": 0.006533278889342589
+    },
+    {
+      "threshold": 0.6,
+      "hazardous_recall": 0.9050505050505051,
+      "false_hazard_alarm_rate": 0.006124948958758677
+    },
+    {
+      "threshold": 0.65,
+      "hazardous_recall": 0.898989898989899,
+      "false_hazard_alarm_rate": 0.004899959167006942
+    },
+    {
+      "threshold": 0.7,
+      "hazardous_recall": 0.8909090909090909,
+      "false_hazard_alarm_rate": 0.00449162923642303
+    },
+    {
+      "threshold": 0.75,
+      "hazardous_recall": 0.8848484848484849,
+      "false_hazard_alarm_rate": 0.0032666394446712946
+    },
+    {
+      "threshold": 0.8,
+      "hazardous_recall": 0.8707070707070707,
+      "false_hazard_alarm_rate": 0.002449979583503471
+    },
+    {
+      "threshold": 0.85,
+      "hazardous_recall": 0.8424242424242424,
+      "false_hazard_alarm_rate": 0.002041649652919559
+    },
+    {
+      "threshold": 0.9,
+      "hazardous_recall": 0.8181818181818182,
+      "false_hazard_alarm_rate": 0.0012249897917517355
+    },
+    {
+      "threshold": 0.95,
+      "hazardous_recall": 0.7636363636363637,
+      "false_hazard_alarm_rate": 0.0004083299305839118
+    }
+  ],
+  "n_test": 2944,
+  "model": "ml\\cnn\\artifacts\\fire_cnn.keras"
+}

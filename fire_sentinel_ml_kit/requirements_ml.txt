@@ -1,0 +1,6 @@
+tensorflow>=2.16        # Keras 3. On Windows native, use WSL2 or Colab for TF >= 2.11 GPU; CPU is fine for this model size
+numpy
+pillow
+scikit-learn
+matplotlib
+imagehash

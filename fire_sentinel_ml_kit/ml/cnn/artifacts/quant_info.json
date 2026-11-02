@@ -1,0 +1,16 @@
+{
+  "input_shape": [
+    1,
+    96,
+    96,
+    3
+  ],
+  "input_dtype": "int8",
+  "input_scale": 1.0000087022781372,
+  "input_zero_point": -128,
+  "output_scale": 0.00390625,
+  "output_zero_point": -128,
+  "fp32_bytes": 1610652,
+  "int8_bytes": 626904,
+  "n_representative": 300
+}

@@ -1,0 +1,24 @@
+"""
+services/ml_inference_service.py — Fire Sentinel Prototype 2
+
+STUB. Real implementation lands in the ML phase (ml/cnn/), once you've
+gathered the NO_FLAME / CONTROLLED_FLAME / HAZARDOUS_FIRE image dataset.
+
+Deliberately isolated behind this one function so that wiring it up later is
+a one-function change in this file — nothing in routes/ needs to change.
+"""
+
+from dataclasses import dataclass
+
+
+@dataclass
+class ClassificationResult:
+    label: str          # NO_FLAME | CONTROLLED_FLAME | HAZARDOUS_FIRE | PENDING_MODEL
+    confidence: float    # 0.0-1.0
+
+
+def classify_snapshot(image_path: str) -> ClassificationResult:
+    """Placeholder — always returns PENDING_MODEL until the trained MobileNetV2
+    model is wired in here during the ML phase.
+    """
+    return ClassificationResult(label="PENDING_MODEL", confidence=0.0)

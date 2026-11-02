@@ -1,0 +1,8 @@
+{
+  "_comment": "Fill in the 'path' of each Roboflow folder (use forward slashes). 'role' is only used with --mode two_class: it is YOUR assumption about the whole dataset. Flame Kaggle has no box labels, so it cannot be used for YOLO.",
+  "sources": [
+    {"name": "fire_detection", "path": "ml/yolo/sources/Fire detection.v1i.yolov8",       "fire_class_ids": [0], "role": "hazardous"},
+    {"name": "fire_nonfire",   "path": "ml/yolo/sources/Fire and Non Fire.v4i.yolov8",    "role": "hazardous"},
+    {"name": "stove",          "path": "ml/yolo/sources/stove Fire Detection.v1i.yolov8", "role": "controlled"}
+  ]
+}

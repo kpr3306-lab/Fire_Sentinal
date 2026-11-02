@@ -1,0 +1,32 @@
+{
+  "keras_fp32": {
+    "size_kb": 4543.4,
+    "accuracy": 0.9775815217391305,
+    "macro_f1": 0.9696155263457836,
+    "hazardous_recall": 0.9151515151515152,
+    "false_hazard_alarm_rate": 0.007758268681094325
+  },
+  "tflite_fp32": {
+    "size_kb": 1572.9,
+    "accuracy": 0.9775815217391305,
+    "macro_f1": 0.9696155263457836,
+    "hazardous_recall": 0.9151515151515152,
+    "false_hazard_alarm_rate": 0.007758268681094325,
+    "host_latency_ms_mean": 0.4982080002082512,
+    "host_latency_ms_p95": 0.7585700368508694
+  },
+  "tflite_int8": {
+    "size_kb": 612.2,
+    "accuracy": 0.9697690217391305,
+    "macro_f1": 0.9611143761496277,
+    "hazardous_recall": 0.9191919191919192,
+    "false_hazard_alarm_rate": 0.013883217639853002,
+    "host_latency_ms_mean": 0.44255500310100615,
+    "host_latency_ms_p95": 0.5420299916295335
+  },
+  "delta_int8_vs_fp32": {
+    "accuracy": -0.0078125,
+    "hazardous_recall": 0.004040404040404066,
+    "size_reduction_x": 2.57
+  }
+}

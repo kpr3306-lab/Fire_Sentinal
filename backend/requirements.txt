@@ -1,0 +1,9 @@
+Flask==3.0.3
+flask-cors==4.0.1
+python-dotenv==1.0.1
+requests==2.32.3
+Werkzeug==3.0.3
+numpy
+Pillow
+ai-edge-litert      # CNN classifier runtime (services/ml_inference_service.py)
+ultralytics         # OPTIONAL: YOLO flame detector; large download (PyTorch). Backend runs without it.
