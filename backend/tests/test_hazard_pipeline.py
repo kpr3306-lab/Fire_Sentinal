@@ -6,7 +6,7 @@ import io, json, os, sqlite3, sys, tempfile, unittest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import config
-from services import hazard_service, yolo_service
+from services import hazard_service, ml_inference_service, yolo_service
 from services.yolo_service import DetectionResult
 
 DET = lambda n, a: DetectionResult("ok", n, a, [[0.1, 0.1, 0.2, 0.2, 0.9]] * n)
@@ -86,13 +86,20 @@ class Pipeline(unittest.TestCase):
         config.DATABASE_PATH = os.path.join(self.tmp.name, "t.db")
         config.SNAPSHOT_STORAGE_DIR = os.path.join(self.tmp.name, "snaps")
         yolo_service._state.update(model=None, mtime=None)
+        self.cnn_path = ml_inference_service.MODEL_PATH
         import app as app_module
         self.client = app_module.create_app().test_client()
         c = sqlite3.connect(config.DATABASE_PATH); c.execute("INSERT INTO devices (device_id) VALUES ('dev1')"); c.commit(); c.close()
         from PIL import Image
         b = io.BytesIO(); Image.new("RGB", (64, 48), (200, 80, 20)).save(b, "JPEG"); self.jpg = b.getvalue()
 
-    def tearDown(self): self.tmp.cleanup()
+    def tearDown(self):
+        ml_inference_service.MODEL_PATH = self.cnn_path; ml_inference_service._state.update(mtime=None, it=None)
+        self.tmp.cleanup()
+
+    def backend_models_off(self):
+        config.YOLO_MODEL_PATH = "/nonexistent/fire_yolo.pt"
+        ml_inference_service.MODEL_PATH = "/nonexistent/fire_cnn_int8.tflite"
 
     def post(self, reason="confirming"):
         return self.client.post("/api/camera/snapshot", data={"device_id": "dev1", "reason": reason,
@@ -103,7 +110,7 @@ class Pipeline(unittest.TestCase):
         r = c.execute("SELECT * FROM snapshots ORDER BY id").fetchall(); c.close(); return r
 
     def test_detector_off_still_saves(self):
-        config.YOLO_MODEL_PATH = "/nonexistent/fire_yolo.pt"
+        self.backend_models_off()
         r = self.post(); self.assertEqual(r.status_code, 200)
         body = r.get_json(); self.assertEqual(body["detector_status"], "unavailable")
         row = self.rows()[0]
@@ -111,7 +118,7 @@ class Pipeline(unittest.TestCase):
         self.assertIsNone(row["flame_boxes"]); self.assertEqual(row["hazard_level"], "UNKNOWN")
 
     def test_device_vision_result_used_when_backend_models_off(self):
-        config.YOLO_MODEL_PATH = "/nonexistent/fire_yolo.pt"
+        self.backend_models_off()
         r = self.client.post("/api/camera/snapshot", data={
             "device_id": "dev1", "reason": "FIRE_CONFIRMED", "cnn_class": "HAZARDOUS_FIRE", "cnn_conf": "0.91",
             "yolo_boxes": "[[0.1,0.2,0.5,0.6,0.8]]", "image": (io.BytesIO(self.jpg), "s.jpg")},
