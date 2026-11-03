@@ -1,4 +1,4 @@
-# Ignis: Complete System Reference
+# Fire Sentinel: Complete System Reference
 
 Updated wiring · how every part works · what every file is for
 (State of the project as of 29 Oct 2026 — firmware v2.3: on-device CNN + YOLO from microSD, USB-C power)
@@ -482,7 +482,7 @@ Alerts fire **once per state change**, not on every upload, so the 1-second elev
 
 ## 7. ML — CNN, YOLO, sensor model
 
-Everything is run in **PowerShell from the `ignis_ml_kit` folder**. The CNN and YOLO scripts need `tf-keras` and `$env:TF_USE_LEGACY_KERAS = "1"` on your TensorFlow 2.21 / Python 3.12 install; the sensor scripts do not use TensorFlow.
+Everything is run in **PowerShell from the `fire_sentinel_ml_kit` folder**. The CNN and YOLO scripts need `tf-keras` and `$env:TF_USE_LEGACY_KERAS = "1"` on your TensorFlow 2.21 / Python 3.12 install; the sensor scripts do not use TensorFlow.
 
 ### 7.1 Three models, three jobs
 
@@ -542,7 +542,7 @@ Record ≥ 6 sessions per class over different days/places (NORMAL incl. everyda
 | `ml/sensor/tests/test_parity.py` | **new** — compiles the real firmware inference code and proves it matches scikit-learn |
 | `backend_services/ml_inference_sevice.py` | your real CNN inference service (note the spelling — install it in `backend/services/` as `ml_inference_service.py`) |
 
-Reference documents in the project: *Ignis — Complete ML Project Record* (Claude doc), `Fire_Sentinel_ML_All_Code.md`, `ignis_ml_full_source_FINAL.zip`, plus the two roadmap PDFs (*Prototype 2 Blueprint*, *Reimagined Dashboard Features and Workflow*).
+Reference documents in the project: *Fire Sentinel — Complete ML Project Record* (Claude doc), `Fire_Sentinel_ML_All_Code.md`, `fire_sentinel_ml_full_source_FINAL.zip`, plus the two roadmap PDFs (*Prototype 2 Blueprint*, *Reimagined Dashboard Features and Workflow*).
 
 ---
 

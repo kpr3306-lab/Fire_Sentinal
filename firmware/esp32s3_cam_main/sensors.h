@@ -1,5 +1,5 @@
 /*
- * sensors.h — Ignis (v2)
+ * sensors.h — Fire Sentinel (v2)
  * BME280 + ADS1115 (MQ-2/MQ-7/MQ-135/UV) + debounced B35 flame input, plus the
  * self-protecting baseline (calibration) that the fusion layer compares against.
  */

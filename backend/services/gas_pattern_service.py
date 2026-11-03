@@ -1,5 +1,5 @@
 """
-services/gas_pattern_service.py — Ignis
+services/gas_pattern_service.py — Fire Sentinel
 
 INTERIM, rule-based version of the "which gas is building up" feature.
 

@@ -1,4 +1,4 @@
-# Ignis — Backend
+# Fire Sentinel — Backend
 
 Flask + raw SQLite (no ORM — schema is small and stable enough that plain
 SQL stays readable, keeps dependencies light).

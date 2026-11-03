@@ -31,7 +31,7 @@ export default function App() {
             <Flame size={20} className="text-danger" />
           </div>
           <div>
-            <p className="font-semibold leading-tight">Ignis</p>
+            <p className="font-semibold leading-tight">Fire Sentinel</p>
             <p className="text-xs text-textMuted leading-tight">Smart Fire Detection</p>
           </div>
         </div>

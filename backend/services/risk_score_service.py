@@ -1,5 +1,5 @@
 """
-services/risk_score_service.py — Ignis
+services/risk_score_service.py — Fire Sentinel
 
 This is the orchestration layer that runs every time a sensor reading comes
 in from a device. It:
@@ -111,7 +111,7 @@ def _dispatch_alert(conn, device_id, room_id, to_state, message, photo_path):
         )
 
     if policy["email"]:
-        subject = f"Ignis Alert [{policy['severity'].upper()}] — {to_state}"
+        subject = f"Fire Sentinel Alert [{policy['severity'].upper()}] — {to_state}"
         success, error = email_service.send_email(subject, message, attachment_path=photo_path)
         conn.execute(
             """INSERT INTO alerts (device_id, room_id, channel, severity, message, success, error_detail)
@@ -202,7 +202,7 @@ def process_sensor_reading(conn, payload: dict) -> dict:
         conn.commit()
 
         message = (
-            f"Ignis — {incoming_state.replace('_', ' ')}\n"
+            f"Fire Sentinel — {incoming_state.replace('_', ' ')}\n"
             f"Device: {device_id}\n"
             f"Risk score: {risk_score}/100\n"
             f"Temp: {sensors.get('temperature_c', '?')}°C | "

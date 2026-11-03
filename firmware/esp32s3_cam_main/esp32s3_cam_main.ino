@@ -1,5 +1,5 @@
 /*
- * esp32s3_cam_main.ino — Ignis (firmware v2)
+ * esp32s3_cam_main.ino — Fire Sentinel (firmware v2)
  * Board: Freenove ESP32-S3-WROOM CAM (N16R8)
  *
  * Arduino IDE settings (all confirmed during bring-up):
@@ -116,7 +116,7 @@ static void http_task(void*) {
 void setup() {
   Serial.begin(115200);
   delay(300);
-  Serial.println("\n[boot] Ignis firmware v2 starting...");
+  Serial.println("\n[boot] Fire Sentinel firmware v2 starting...");
   Serial.printf("[boot] sensor model: %s%s\n", sensor_ml_available() ? sensor_ml_version() : "none (rule-based only)",
                 sensor_ml_available() && SENSOR_MODEL_SYNTHETIC ? "  *** SYNTHETIC — test only ***" : "");
 #if SERIAL_CSV_LOG

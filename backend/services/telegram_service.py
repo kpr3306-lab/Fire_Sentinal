@@ -1,5 +1,5 @@
 """
-services/telegram_service.py — Ignis
+services/telegram_service.py — Fire Sentinel
 
 Uses the Telegram Bot HTTP API directly (no extra SDK dependency). Two send
 paths: plain text, and photo-with-caption for snapshot-backed alerts.

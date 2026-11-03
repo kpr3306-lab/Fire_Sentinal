@@ -1,5 +1,5 @@
 """
-sensor_common.py — Ignis sensor model: shared definitions and feature extraction.
+sensor_common.py — Fire Sentinel sensor model: shared definitions and feature extraction.
 
 !! The feature math here MUST match the firmware (window.cpp + sensor_ml.cpp). ml/sensor/tests/test_parity.py
 !! checks the constants against config.h and the model output against the real firmware code.

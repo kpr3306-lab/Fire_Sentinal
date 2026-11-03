@@ -29,7 +29,7 @@ void display_splash(const char* l1, const char* l2) {
   oled.clearDisplay();
   oled.setTextColor(SSD1306_WHITE);
   oled.setTextSize(1);
-  oled.setCursor(0, 8);  oled.println("IGNIS");
+  oled.setCursor(0, 8);  oled.println("FIRE SENTINEL");
   oled.setCursor(0, 28); oled.println(l1);
   oled.setCursor(0, 40); oled.println(l2);
   oled.display();

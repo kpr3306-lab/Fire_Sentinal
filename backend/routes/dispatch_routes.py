@@ -1,5 +1,5 @@
 """
-routes/dispatch_routes.py — Ignis
+routes/dispatch_routes.py — Fire Sentinel
 
 Dashboard-facing API for the SIMULATED fire-department dispatch (services/dispatch_service.py).
 

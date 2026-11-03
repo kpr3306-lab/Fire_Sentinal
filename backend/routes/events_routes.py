@@ -1,5 +1,5 @@
 """
-routes/events_routes.py — Ignis
+routes/events_routes.py — Fire Sentinel
 Powers the Detection Timeline and Recent Events dashboard widgets.
 """
 

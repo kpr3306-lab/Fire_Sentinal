@@ -1,6 +1,6 @@
-# Ignis — CNN training kit
+# Fire Sentinel — CNN training kit
 
-Run every command below from the `ignis_ml_kit/` folder.
+Run every command below from the `fire_sentinel_ml_kit/` folder.
 
 ```
 ml/cnn/cnn_common.py          shared helpers (class order is FIXED: no_fire, controlled_flame, hazardous_fire)

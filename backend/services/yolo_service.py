@@ -1,5 +1,5 @@
 """
-services/yolo_service.py — Ignis
+services/yolo_service.py — Fire Sentinel
 
 Runs the YOLO11n flame detector (ml/yolo -> fire_yolo.pt) on one snapshot.
 

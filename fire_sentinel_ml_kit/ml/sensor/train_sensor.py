@@ -1,11 +1,11 @@
 """
-ml/sensor/train_sensor.py — train the Ignis sensor model (stage 2 + 3 of the sensor ML plan).
+ml/sensor/train_sensor.py — train the Fire Sentinel sensor model (stage 2 + 3 of the sensor ML plan).
 
   Stage 1  baseline calibration (NOT ML)        -> already on the device (sensors.cpp), logged in every CSV row
   Stage 2  classifier on window features        -> RandomForest: NORMAL / CONTROLLED_FLAME / HAZARDOUS_FIRE
   Stage 3  anomaly detector, NORMAL-only data   -> IsolationForest: "this is not normal", even for fires never recorded
 
-Run from the ignis_ml_kit folder (PowerShell):
+Run from the fire_sentinel_ml_kit folder (PowerShell):
     pip install scikit-learn pandas numpy joblib matplotlib
     python ml/sensor/train_sensor.py
     python ml/sensor/train_sensor.py --data ml/sensor/dataset/demo_synthetic --out ml/sensor/artifacts_demo   # smoke test only
@@ -166,7 +166,7 @@ def main():
     # ---------------- report ----------------
     banner = ("> **SYNTHETIC DATA — smoke test only. These numbers mean nothing about real fires.**\n\n"
               if info["synthetic"] else "")
-    rep = f"""# Ignis — sensor model report
+    rep = f"""# Fire Sentinel — sensor model report
 
 {banner}Model `{manifest['model_version']}` · data `{args.data}` · {len(sessions)} sessions · {len(y)} windows ({counts})
 

@@ -1,5 +1,5 @@
 /*
- * config.h — Ignis (firmware v2)
+ * config.h — Fire Sentinel (firmware v2)
  * Board: Freenove ESP32-S3-WROOM CAM (N16R8, OPI PSRAM)
  *
  * Arduino IDE settings that matter (from bring-up):
@@ -22,7 +22,7 @@
 // ---------------------------------------------------------------------------
 // Identity / backend
 // ---------------------------------------------------------------------------
-#define DEVICE_NAME "ignis-s3-01"
+#define DEVICE_NAME "fire-sentinel-s3-01"
 
 #define BACKEND_HOST "10.111.193.119"       // Flask server LAN IP
 #define BACKEND_PORT 5000

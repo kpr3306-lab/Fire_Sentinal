@@ -1,5 +1,5 @@
 """
-services/hazard_service.py — Ignis
+services/hazard_service.py — Fire Sentinel
 
 Combines the CNN class, the YOLO flame boxes and the growth since the previous snapshot into one
 hazard level for a snapshot. Pure logic: no Flask, no model code, easy to test and to retune.

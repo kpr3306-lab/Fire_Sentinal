@@ -59,7 +59,7 @@ def main():
     for label, scn, secs, seed, scale in plan:
         path = os.path.join(OUT, f"{label}__{scn}__demo{seed}.csv")
         with open(path, "w") as f:
-            f.write(f"# ignis-sensor-session v1\n# label={label}\n# scenario={scn}\n# synthetic=true\n{COLS}\n")
+            f.write(f"# fire-sentinel-sensor-session v1\n# label={label}\n# scenario={scn}\n# synthetic=true\n{COLS}\n")
             f.write("\n".join(session(label, scn, secs, seed, scale)) + "\n")
     print(f"wrote {len(plan)} SYNTHETIC sessions to {OUT}  (pipeline smoke test only — not real data)")
 

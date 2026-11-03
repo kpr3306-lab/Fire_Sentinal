@@ -1,5 +1,5 @@
 """
-routes/sensor_routes.py — Ignis
+routes/sensor_routes.py — Fire Sentinel
 
 POST /api/sensor-data — matches the JSON shape sent by
 firmware/esp32s3-cam-main/network_client.cpp's network_post_sensor_data():

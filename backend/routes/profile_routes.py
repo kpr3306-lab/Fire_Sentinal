@@ -1,5 +1,5 @@
 """
-routes/profile_routes.py — Ignis
+routes/profile_routes.py — Fire Sentinel
 
 Rooms, per-room appliances (electrical/gas equipment declared by the user),
 and emergency contacts. Appliance data feeds a minor contextual note in

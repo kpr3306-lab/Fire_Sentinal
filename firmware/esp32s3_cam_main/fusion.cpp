@@ -1,5 +1,5 @@
 /*
- * fusion.cpp — Ignis (v2)
+ * fusion.cpp — Fire Sentinel (v2)
  *
  * Weights (see config.h): flame 35, UV 10, temperature 25, gas 30, multi-gas
  * agreement 10  => 110 clamped to 100. Without flame the maximum is 75, so a

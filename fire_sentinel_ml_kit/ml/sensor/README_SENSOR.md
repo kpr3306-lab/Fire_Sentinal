@@ -1,4 +1,4 @@
-# Ignis — sensor model kit (stage 1-3 of the sensor ML plan)
+# Fire Sentinel — sensor model kit (stage 1-3 of the sensor ML plan)
 
 | Stage | What | Where it runs |
 |---|---|---|
@@ -16,7 +16,7 @@
 | Model for the firmware | `ml/sensor/firmware_src/sensor_model.h` -> copied into the sketch folder, compiled into **flash** (no SD card) |
 | Inference code for the firmware | `ml/sensor/firmware_src/sensor_ml.h / sensor_ml.cpp` (already in firmware v2.2) |
 
-## Steps (PowerShell, from the `ignis_ml_kit` folder)
+## Steps (PowerShell, from the `fire_sentinel_ml_kit` folder)
 ```powershell
 pip install scikit-learn pandas numpy joblib matplotlib pyserial
 

@@ -1,14 +1,19 @@
-# Ignis 🔥
+# Fire Sentinel 🔥
 
 **Multi-sensor fire detection on an ESP32-S3, with on-device AI, a Flask backend and a React dashboard.**
 
-Ignis (formerly *Fire Sentinel*, Prototype 2) watches a room with gas, flame, UV and climate sensors plus a camera. It decides the alarm state on the board itself, so it keeps working without WiFi. It classifies camera snapshots on the board with a quantized CNN and YOLO model, and sends readings, photos and alerts to a backend that drives a live web dashboard and Telegram/email notifications.
+Fire Sentinel (Prototype 2) watches a room with gas, flame, UV and climate sensors plus a camera. It decides the alarm state on the board itself, so it keeps working without WiFi. It classifies camera snapshots on the board with a quantized CNN and YOLO model, and sends readings, photos and alerts to a backend that drives a live web dashboard and Telegram/email notifications.
 
 <p align="center">
-  <img src="docs/images/dashboard.png" width="62%" alt="Ignis dashboard">
-  <img src="docs/images/hardware.jpeg" width="34%" alt="Ignis hardware prototype">
+  <img src="docs/images/dashboard.png" width="62%" alt="Fire Sentinel dashboard">
+  <img src="docs/images/hardware.jpeg" width="34%" alt="Fire Sentinel hardware prototype">
 </p>
 <p align="center"><em>Live dashboard (left) and the ESP32-S3 hardware prototype (right)</em></p>
+<p align="center">
+  <img src="docs/images/setup.jpeg" width="58%" alt="Fire Sentinel running with the dashboard">
+  <img src="docs/images/telegram_alerts.jpeg" width="25%" alt="Telegram alerts with snapshot">
+</p>
+<p align="center"><em>Full setup in operation (left) and Telegram alerts with the on-board snapshot (right)</em></p>
 
 ---
 
@@ -21,7 +26,7 @@ Ignis (formerly *Fire Sentinel*, Prototype 2) watches a room with gas, flame, UV
 - **Dashboard.** React + Vite + Tailwind with live SVG gauges, risk score, on-demand camera, snapshot gallery, detection timeline, rooms and appliances, device setup, alert history, analytics and reports.
 - **Zero-reflash device setup.** Boards register themselves with the backend. You assign rooms and override IPs from the dashboard.
 
-> ⚠️ **Safety note:** the fire-department alert is a **simulation only**. Ignis never places a real emergency call. This is a student prototype, not a certified fire alarm.
+> ⚠️ **Safety note:** the fire-department alert is a **simulation only**. Fire Sentinel never places a real emergency call. This is a student prototype, not a certified fire alarm.
 
 ## Architecture
 
@@ -47,8 +52,9 @@ Ignis (formerly *Fire Sentinel*, Prototype 2) watches a room with gas, flame, UV
 | [`firmware/`](firmware/) | ESP32-S3 Arduino sketch (`esp32s3_cam_main/`), quantized `.tflite` models for the SD card, wiring diagram, [flashing guide](firmware/README_FLASHING.md) |
 | [`backend/`](backend/) | Flask REST API, services (alerts, dispatch, hazard and ML inference), SQLite schema, tests. See [Backend README](backend/Backend_README.md) |
 | [`dashboard/`](dashboard/) | React + Vite + Tailwind web dashboard. See [Dashboard README](dashboard/README.md) |
-| [`ignis_ml_kit/`](ignis_ml_kit/) | Training, quantization and evaluation scripts for the CNN, YOLO and sensor models. See [ML README](ignis_ml_kit/README_ML.md) |
-| [`docs/Ignis_System_Reference.md`](docs/Ignis_System_Reference.md) | Full system reference: wiring, GPIO map, firmware internals, API, database, ML |
+| [`fire_sentinel_ml_kit/`](fire_sentinel_ml_kit/) | Training, quantization and evaluation scripts for the CNN, YOLO and sensor models. See [ML README](fire_sentinel_ml_kit/README_ML.md) |
+| [`docs/Fire_Sentinel_System_Reference.md`](docs/Fire_Sentinel_System_Reference.md) | Full system reference: wiring, GPIO map, firmware internals, API, database, ML |
+| [`docs/Fire_Sentinel_Project_Report.pdf`](docs/Fire_Sentinel_Project_Report.pdf) | Project report (B.Tech Data Science, Sem V) |
 | [`docs/images/`](docs/images/) | Screenshots and photos |
 
 ## Hardware
@@ -62,7 +68,7 @@ Ignis (formerly *Fire Sentinel*, Prototype 2) watches a room with gas, flame, UV
 | BME280 | Temperature, humidity, pressure |
 | SSD1306 OLED, passive buzzer, push button | Local status, alarm, silence/acknowledge |
 
-Power: 5 V / 2 A USB-C adapter. The pin map, wiring and power notes are in [`firmware/README_FLASHING.md`](firmware/README_FLASHING.md) and [`firmware/Ignis_Wiring_Diagram.pdf`](firmware/Ignis_Wiring_Diagram.pdf).
+Power: 5 V / 2 A USB-C adapter. The pin map, wiring and power notes are in [`firmware/README_FLASHING.md`](firmware/README_FLASHING.md) and [`firmware/Fire_Sentinel_Wiring_Diagram.pdf`](firmware/Fire_Sentinel_Wiring_Diagram.pdf).
 
 ## Quick start
 
@@ -112,11 +118,11 @@ python -m unittest discover tests
 | YOLO11n fire detector (trained at 640 px, 50 epochs) | 2.9 MB INT8 @160 px | Validation precision 0.79, recall 0.61, mAP50 0.69, mAP50-95 0.34 |
 
 <p align="center">
-  <img src="ignis_ml_kit/ml/cnn/artifacts/eval_int8/confusion_matrix.png" width="45%" alt="CNN INT8 confusion matrix">
-  <img src="ignis_ml_kit/ml/yolo/artifacts/colab_run/content/runs/fire_yolo/results.png" width="50%" alt="YOLO training curves">
+  <img src="fire_sentinel_ml_kit/ml/cnn/artifacts/eval_int8/confusion_matrix.png" width="45%" alt="CNN INT8 confusion matrix">
+  <img src="fire_sentinel_ml_kit/ml/yolo/artifacts/colab_run/content/runs/fire_yolo/results.png" width="50%" alt="YOLO training curves">
 </p>
 
-Training datasets are not included because of their size (about 2 GB). The scripts in `ignis_ml_kit/tools/` rebuild the splits from raw images. The YOLO dataset sources are listed in `ignis_ml_kit/ml/yolo/yolo_sources.json`.
+Training datasets are not included because of their size (about 2 GB). The scripts in `fire_sentinel_ml_kit/tools/` rebuild the splits from raw images. The YOLO dataset sources are listed in `fire_sentinel_ml_kit/ml/yolo/yolo_sources.json`.
 
 ## Known limitations
 

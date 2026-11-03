@@ -1,5 +1,5 @@
 """
-services/email_service.py — Ignis
+services/email_service.py — Fire Sentinel
 
 Gmail SMTP, matching Prototype 1. Requires a Gmail App Password (not your
 normal login password) — set up under Google Account > Security > App

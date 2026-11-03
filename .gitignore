@@ -18,18 +18,18 @@ dashboard/dist/
 backend/storage/
 
 # --- Datasets (too large for GitHub; see README for sources) ---
-ignis_ml_kit/ml/cnn/dataset/
-ignis_ml_kit/ml/yolo/dataset/
-ignis_ml_kit/ml/yolo/dataset.zip
-ignis_ml_kit/ml/yolo/sources/
-ignis_ml_kit/ml/yolo/preview/
-ignis_ml_kit/ml/sensor/dataset/raw/
+fire_sentinel_ml_kit/ml/cnn/dataset/
+fire_sentinel_ml_kit/ml/yolo/dataset/
+fire_sentinel_ml_kit/ml/yolo/dataset.zip
+fire_sentinel_ml_kit/ml/yolo/sources/
+fire_sentinel_ml_kit/ml/yolo/preview/
+fire_sentinel_ml_kit/ml/sensor/dataset/raw/
 
 # --- Duplicate / downloadable weights (canonical copies: backend/models, firmware/) ---
 /*.tflite
-ignis_ml_kit/yolo11n.pt
-ignis_ml_kit/ml/yolo/artifacts/fire_yolo.pt
-ignis_ml_kit/ml/yolo/artifacts/runs/
+fire_sentinel_ml_kit/yolo11n.pt
+fire_sentinel_ml_kit/ml/yolo/artifacts/fire_yolo.pt
+fire_sentinel_ml_kit/ml/yolo/artifacts/runs/
 **/weights/
 
 # --- Old backups / local editor config ---

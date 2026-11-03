@@ -1,5 +1,5 @@
 /*
- * network_client.cpp — Ignis (v2)
+ * network_client.cpp — Fire Sentinel (v2)
  * Library: ArduinoJson v7.
  *
  * Failure behaviour: short HTTP timeouts; after NET_FAILS_BEFORE_BACKOFF consecutive
@@ -144,7 +144,7 @@ static bool post_snapshot(const NetJob& j) {
   const uint8_t* img = fb ? fb->buf : j.jpeg;
   const size_t img_len = fb ? fb->len : j.jpeg_len;
 
-  const String boundary = "IgnisBoundary7331";
+  const String boundary = "FireSentinelBoundary7331";
   String head = form_field(boundary, "device_id", device_get_id()) + form_field(boundary, "reason", j.reason);
   if (j.vis.valid) {                             // on-device CNN / YOLO result (backend falls back to it)
     String boxes = "[";
